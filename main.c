@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 08:39:30 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/20 18:46:12 by lleverge         ###   ########.fr       */
+/*   Created: 2016/04/20 14:26:59 by lleverge          #+#    #+#             */
+/*   Updated: 2016/04/20 17:05:22 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_select.h"
 
-void		ft_putchar(char c)
+int		main(void)
 {
-	write(1, &c, 1);
+	t_term	termi;
+	int		i;
+
+	i = 0;
+	termi.dblist = NULL;
+	ft_init_term(&termi);
+	sleep(10);
+	ft_reset_term(&termi);
+	return (0);
 }

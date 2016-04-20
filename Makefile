@@ -6,19 +6,19 @@
 #    By: lleverge <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/21 17:32:58 by lleverge          #+#    #+#              #
-#    Updated: 2016/04/19 11:06:39 by lleverge         ###   ########.fr        #
+#    Updated: 2016/04/20 18:31:52 by lleverge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_select
-SRC = main.c
+SRC = main.c	tools.c		term_init.c		ft_dblist.c
 OBJ = $(SRC:.c=.o)
 LIB = ./libft/libft.a
 FLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJ)
 	make -C ./libft
-	gcc $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
+	gcc $(FLAGS) -lncurses $(OBJ) $(LIB) -o $(NAME)
 
 all: $(NAME)
 
