@@ -6,21 +6,34 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:26:59 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/20 17:05:22 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/20 19:18:21 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-int		main(void)
+int		ft_select(char **argv, t_term *termi)
+{
+	arg_in_list(argv, termi);
+	count_col(termi);
+	check_size(termi);
+	ft_stock(termi, 0);
+	return (0);
+}
+
+int		main(int argc, char **argv)
 {
 	t_term	termi;
 	int		i;
 
 	i = 0;
+	(void)argc;
 	termi.dblist = NULL;
-	ft_init_term(&termi);
-	sleep(10);
-	ft_reset_term(&termi);
+	if (!ft_init_term(&termi))
+		return (-1);
+	if (argc >= 2)
+		ft_select(argv, &termi);
+	if (!ft_reset_term(&termi))
+		return (-1);
 	return (0);
 }

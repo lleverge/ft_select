@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/20 18:37:04 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/20 19:17:07 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,8 @@ void				init_list(t_dblist *list);
 t_dblist			*fill_list(char *str);
 void				ft_add_link(t_term *termi, t_dblist *lst);
 void				arg_in_list(char **argv, t_term *termi);
+void				count_col(t_term *termi);
+int					check_size(t_term *termi);
+void				ft_resize(void);
+t_term				*ft_stock(t_term *termi, int i);
 #endif
