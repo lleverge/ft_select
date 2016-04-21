@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:33:28 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 16:43:10 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 19:00:15 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int		ft_init_term(t_term *termi)
 
 int		ft_reset_term(t_term *termi)
 {
-	termi->term.c_lflag |= (ICANON | ECHO);
+	if (tcgetattr(0, &termi->term) == -1)
+		return (-1);
+	termi->term.c_lflag = (ICANON | ECHO);
 	if (tcsetattr(0, 0, &(termi->term)) == -1)
 		return (0);
 	tputs(tgetstr("te", NULL), 1, myputchar);

@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:50:00 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 14:09:26 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 18:32:47 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ t_term	*ft_stock(t_term *termi, int i)
 
 int		check_size(t_term *termi)
 {
-	if (termi->nb_row - 2 < termi->count[1]
-		|| termi->nb_col - 2 < termi->count[0])
+	if (termi->nb_row - 2 < termi->count[LINE]
+		|| termi->nb_col - 2 < termi->count[COL])
 	{
+		ft_clear();
 		ft_putendl_fd("Windows size too small.", 2);
 		return (0);
 	}
 	else
-		return (1);
+		ft_clear();
+	return (1);
 }
 
 void	ft_resize(void)
@@ -56,12 +58,12 @@ void	count_col(t_term *termi)
 {
 	t_dblist	*tmp;
 
-	termi->count[0] = termi->dblist->len;
+	termi->count[COL] = termi->dblist->len;
 	tmp = termi->dblist->next;
 	while (tmp != termi->dblist)
 	{
-		if (tmp->len > termi->count[0])
-			termi->count[0] = tmp->len;
+		if (tmp->len > termi->count[COL])
+			termi->count[COL] = tmp->len;
 		tmp = tmp->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 18:29:05 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 14:14:55 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 18:31:33 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ void			arg_in_list(char **argv, t_term *termi)
 		ft_add_link(termi, tmp);
 		i++;
 	}
-	termi->count[1] = i;
+	termi->count[LINE] = i;
 }

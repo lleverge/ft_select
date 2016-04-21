@@ -6,13 +6,13 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:53:02 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 16:31:11 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 18:27:08 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-static void		ft_clear_screen(void)
+void			ft_clear(void)
 {
 	tputs(tgetstr("cl", NULL), 1, myputchar);
 }
@@ -78,7 +78,7 @@ int				ft_keyspot(t_term *termi)
 			ft_ret(termi);
 			return (0);
 		}
-		ft_clear_screen();
+		ft_clear();
 		print_list(termi);
 	}
 	return (1);

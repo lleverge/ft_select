@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 16:43:34 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 18:30:49 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 # define GREEN "[32m"
 # define YELLOW "[33m"
 # define MAGENTA "[35m"
+# define COL 1
+# define LINE 0
 
 typedef struct		s_dblist
 {
@@ -69,6 +71,9 @@ typedef struct		s_term
 	t_dblist		*dblist;
 }					t_term;
 
+void				ft_signal(void);
+void				manage_signal(int i);
+void				ft_clear(void);
 void				deselectall(t_term *termi);
 void				selectall(t_term *termi);
 void				ft_ret(t_term *termi);

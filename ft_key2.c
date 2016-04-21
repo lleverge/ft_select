@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 15:02:11 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 15:40:58 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 18:33:36 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,12 @@ int		ft_delete(t_term *termi)
 	free(tmp->value);
 	free(tmp);
 	count_col(termi);
-	termi->count[1] -= 1;
+	termi->count[LINE] -= 1;
 	return (1);
 }
 
 void	ft_tab(t_term *termi)
 {
+	deselectall(termi);
 	ft_space(termi);
 }
