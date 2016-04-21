@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:26:59 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/20 19:18:21 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 15:46:02 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@ int		ft_select(char **argv, t_term *termi)
 {
 	arg_in_list(argv, termi);
 	count_col(termi);
+	print_list(termi);
 	check_size(termi);
 	ft_stock(termi, 0);
+	while (42)
+	{
+		if (!ft_keyspot(termi))
+			return (0);
+	}
 	return (0);
 }
 

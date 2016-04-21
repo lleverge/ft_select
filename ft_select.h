@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/20 19:17:07 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 16:29:17 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <termcap.h>
 # include <sys/ioctl.h>
 # include <curses.h>
+# define BUFFER *(unsigned int *)buffer
+# define RED "[31m"
+# define BLUE "[34m"
+# define CYAN "[36m"
+# define RESET "[39m"
+# define GREEN "[32m"
+# define YELLOW "[33m"
+# define MAGENTA "[35m"
 
 typedef struct		s_dblist
 {
@@ -61,6 +69,23 @@ typedef struct		s_term
 	t_dblist		*dblist;
 }					t_term;
 
+void				deselectall(t_term *termi);
+void				selectall(t_term *termi);
+void				ft_ret(t_term *termi);
+void				stock_res(t_term *termi);
+void				ft_print_res(t_term *termi);
+void				print_list(t_term *termi);
+void				ft_manage_select(t_dblist *dblist);
+void				select_underline(char *str);
+void				print_select(char *str);
+void				ft_underline(char *str);
+int					ft_keyspot(t_term *termi);
+void				ft_tab(t_term *termi);
+int					ft_delete(t_term *termi);
+void				ft_space(t_term *termi);
+void				go_end(t_term *termi);
+void				go_start(t_term *termi);
+void				display_dblist(t_term *termi);
 int					ft_init_term(t_term *termi);
 int					ft_reset_term(t_term *termi);
 int					myputchar(int c);

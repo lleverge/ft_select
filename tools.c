@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:50:00 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/20 19:19:18 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 14:09:26 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		check_size(t_term *termi)
 	if (termi->nb_row - 2 < termi->count[1]
 		|| termi->nb_col - 2 < termi->count[0])
 	{
-		ft_putendl_fd("Windows size too smtermi.", 2);
+		ft_putendl_fd("Windows size too small.", 2);
 		return (0);
 	}
 	else
