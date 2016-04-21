@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 16:14:51 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 16:40:20 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 16:43:26 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void		selectall(t_term *termi)
 		deselectall(termi);
 }
 
-void		ft_print_res(t_term *termi)
+void		print_res(t_term *termi)
 {
 	int		i;
 

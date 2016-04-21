@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 16:29:17 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 16:43:34 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void				deselectall(t_term *termi);
 void				selectall(t_term *termi);
 void				ft_ret(t_term *termi);
 void				stock_res(t_term *termi);
-void				ft_print_res(t_term *termi);
+void				print_res(t_term *termi);
 void				print_list(t_term *termi);
 void				ft_manage_select(t_dblist *dblist);
 void				select_underline(char *str);

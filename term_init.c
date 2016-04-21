@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:33:28 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/20 16:56:35 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/21 16:43:10 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ int		ft_reset_term(t_term *termi)
 	tputs(tgetstr("te", NULL), 1, myputchar);
 	tputs(tgetstr("ve", NULL), 1, myputchar);
 	if (termi->enter)
-		ft_putstr("ok\n");
+		print_res(termi);
 	return (1);
 }
