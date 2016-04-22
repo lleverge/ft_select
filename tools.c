@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:50:00 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 18:32:47 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/22 15:49:08 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ int		check_size(t_term *termi)
 		ft_putendl_fd("Windows size too small.", 2);
 		return (0);
 	}
-	else
-		ft_clear();
 	return (1);
 }
 

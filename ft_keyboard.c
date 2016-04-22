@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:53:02 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 18:27:08 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/22 15:44:33 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void			ft_clear(void)
 {
-	tputs(tgetstr("cl", NULL), 1, myputchar);
+	tputs(tgetstr("rc", NULL), 1, myputchar);
+	tputs(tgetstr("cd", NULL), 1, myputchar);
 }
 
 static void		move_up(t_term *termi)

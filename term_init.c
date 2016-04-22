@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:33:28 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 19:00:15 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/22 15:46:27 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		ft_init_term(t_term *termi)
 	termi->nb_row = win.ws_row;
 	if (tcsetattr(0, 0, &(termi->term)) == -1)
 		return (0);
-	tputs(tgetstr("ti", NULL), 1, myputchar);
 	tputs(tgetstr("vi", NULL), 1, myputchar);
 	return (1);
 }
