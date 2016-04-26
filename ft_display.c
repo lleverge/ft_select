@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:10:13 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 15:46:41 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/22 19:17:16 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,7 @@ void	print_select(char *str)
 
 void	print_list(t_term *termi)
 {
-	t_dblist	*tmp;
-
-	tmp = NULL;
-	ft_manage_select(termi->dblist);
-	tmp = termi->dblist->next;
-	while (tmp != termi->dblist)
-	{
-		ft_manage_select(tmp);
-		tmp = tmp->next;
-	}
+	ft_op_display(termi, list_size(termi));
 }
 
 void	ft_underline(char *str)

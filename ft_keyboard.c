@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:53:02 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/22 15:44:33 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/22 17:13:10 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,18 @@ int				ft_keyspot(t_term *termi)
 	read(0, buffer, 4);
 	if (BUFFER == ESC_KEY)
 		return (0);
-	if (check_size(termi))
+	manage_key(termi, buffer);
+	if (BUFFER == DEL_KEY || BUFFER == SUP_KEY)
 	{
-		manage_key(termi, buffer);
-		if (BUFFER == DEL_KEY || BUFFER == SUP_KEY)
-		{
-			if (!ft_delete(termi))
-				return (0);
-		}
-		if (BUFFER == RET_KEY)
-		{
-			ft_ret(termi);
+		if (!ft_delete(termi))
 			return (0);
-		}
-		ft_clear();
-		print_list(termi);
 	}
+	if (BUFFER == RET_KEY)
+	{
+		ft_ret(termi);
+		return (0);
+	}
+	ft_clear();
+	print_list(termi);
 	return (1);
 }

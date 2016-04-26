@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:26:59 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/22 15:43:18 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/22 17:41:40 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int		ft_select(char **argv, t_term *termi)
 	arg_in_list(argv, termi);
 	count_col(termi);
 	print_list(termi);
-	check_size(termi);
 	ft_stock(termi, 0);
 	while (1)
 	{
+		get_screen_size(termi);
 		if (!ft_keyspot(termi))
 			return (0);
 	}

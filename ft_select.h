@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/21 18:30:49 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/04/22 19:18:09 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,12 @@ typedef struct		s_term
 	t_dblist		*dblist;
 }					t_term;
 
+int					list_size(t_term *termi);
+void				ft_op_display(t_term *termi, int file_max);
+int					strlenint(char *str);
+int					max_col(t_term *termi, int max);
+void				get_screen_size(t_term *termi);
+int					max_size(t_term *termi);
 void				ft_signal(void);
 void				manage_signal(int i);
 void				ft_clear(void);
