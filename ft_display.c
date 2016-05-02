@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:10:13 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/22 19:17:16 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/05/02 14:27:58 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,24 @@ void	print_select(char *str)
 	tputs(tgetstr("se", NULL), 1, myputchar);
 }
 
-void	print_list(t_term *termi)
+void	ft_print(t_term *termi)
 {
-	ft_op_display(termi, list_size(termi));
+	int			i;
+	int			max;
+	t_dblist	*tmp;
+
+	i = 1;
+	max = -1;
+	tmp = NULL;
+	ft_manage_select(termi->dblist);
+	tmp = termi->dblist->next;
+	while (tmp != termi->dblist)
+	{
+		max = ft_op_display(termi, i, max);
+		i++;
+		ft_manage_select(tmp);
+		tmp = tmp->next;
+	}
 }
 
 void	ft_underline(char *str)

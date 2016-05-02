@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:53:02 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/22 17:13:10 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/05/02 14:31:31 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ int				ft_keyspot(t_term *termi)
 		return (0);
 	}
 	ft_clear();
-	print_list(termi);
+	ft_print(termi);
 	return (1);
 }

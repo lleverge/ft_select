@@ -6,43 +6,29 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 16:54:37 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/22 19:18:48 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/05/02 14:29:47 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-void			ft_op_display(t_term *termi, int file_max)
+int				ft_op_display(t_term *termi, int i, int max)
 {
-	int		i;
+	int		nb_col;
+	int		nb_files_in_col;
 	int		j;
-	int		col;
-	t_dblist	*tmp;
 
-	i = -1;
 	j = 0;
-	tmp = NULL;
-	tmp = termi->dblist->next;
-	col = max_col(termi, max_size(termi));
-	if (list_size(termi) / col < termi->nb_row)
+	nb_col = termi->nb_col / (max_size(termi) + 2);
+	nb_files_in_col = (list_size(termi) + 1) / (nb_col - 1);
+	if (i % (nb_files_in_col + 1) == 0)
 	{
-		ft_manage_select(termi->dblist);
-		while (tmp != termi->dblist)
-		{
-			j = -1;
-			if ((i % (file_max / col)) == 0)
-			{
-				while (++j < file_max / col)
-					tputs(tgetstr("up", NULL), 1, myputchar);
-				tputs(tgetstr("nd", NULL), 1, myputchar);				
-				tputs(tgetstr("nd", NULL), 1, myputchar);
-			}
-			ft_manage_select(tmp);
-			tmp = tmp->next;
-		}
+		tputs(tgetstr("rc", NULL), 1, myputchar);
+		max += (max_size(termi) + 2);
 	}
-	else
-		ft_putendl_fd("Too small", 2);
+	while (j++ <= max)
+		tputs(tgetstr("nd", NULL), 1, myputchar);
+	return (max);
 }
 
 int				strlenint(char *str)
