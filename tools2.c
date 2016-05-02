@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 16:54:37 by lleverge          #+#    #+#             */
-/*   Updated: 2016/05/02 14:29:47 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/05/02 14:36:03 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,18 @@ int				max_col(t_term *termi, int max)
 
 int				list_size(t_term *termi)
 {
-	t_dblist    *tmp;
+	t_dblist	*tmp;
 	int			size;
 
 	size = 1;
 	tmp = NULL;
 	tmp = termi->dblist->next;
-    while (tmp != termi->dblist)
-    {
+	while (tmp != termi->dblist)
+	{
 		size++;
-        tmp = tmp->next;
-    }
-    return (size);
+		tmp = tmp->next;
+	}
+	return (size);
 }
 
 int				max_size(t_term *termi)
