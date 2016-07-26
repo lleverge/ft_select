@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/07/26 15:50:25 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/07/26 17:59:18 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef enum		e_enum
 typedef struct		s_term
 {
 	struct termios	term;
+	int				fd;
 	char			*name_term;
 	int				nb_col;
 	int				nb_row;
@@ -70,7 +71,10 @@ typedef struct		s_term
 	t_dblist		*dblist;
 }					t_term;
 
-void				manage_signal(int signum, t_term *termi);
+
+void				screen_clear(void);
+void				manage_signal(void);
+int					ft_check_size(t_term *termi);
 void				ft_print(t_term *termi);
 int					list_size(t_term *termi);
 int					ft_op_display(t_term *termi, int i, int max);
@@ -97,8 +101,8 @@ void				ft_space(t_term *termi);
 void				go_end(t_term *termi);
 void				go_start(t_term *termi);
 void				display_dblist(t_term *termi);
-int					ft_init_term(t_term *termi);
-int					ft_reset_term(t_term *termi);
+int					ft_init_termios(t_term *termi);
+int					ft_end_termios(t_term *termi);
 int					myputchar(int c);
 void				init_list(t_dblist *list);
 t_dblist			*fill_list(char *str);

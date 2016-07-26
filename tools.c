@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:50:00 by lleverge          #+#    #+#             */
-/*   Updated: 2016/04/22 18:09:36 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/07/26 18:05:55 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,16 @@ void	get_screen_size(t_term *termi)
 	termi->nb_row = win.ws_row;
 }
 
+void	screen_clear(void)
+{
+	tputs(tgetstr("rc", NULL), 1, myputchar);
+	tputs(tgetstr("cd", NULL), 1, myputchar);
+}
+
 t_term	*ft_stock(t_term *termi, int i)
 {
-	t_term *tmp;
+	static t_term *tmp = NULL;
 
-	tmp = NULL;
 	if (i == 0)
 		tmp = termi;
 	return (tmp);

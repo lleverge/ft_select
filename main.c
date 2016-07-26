@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:26:59 by lleverge          #+#    #+#             */
-/*   Updated: 2016/07/26 15:12:07 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/07/26 18:04:01 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int		ft_select(char **argv, t_term *termi)
 {
-	tputs(tgetstr("cr", NULL), 1, myputchar);
+	tputs(tgetstr("cl", NULL), 1, myputchar);
 	tputs(tgetstr("sc", NULL), 1, myputchar);
 	arg_in_list(argv, termi);
 	count_col(termi);
 	ft_print(termi);
+	ft_check_size(termi);
 	ft_stock(termi, 0);
 	while (1)
 	{
-		get_screen_size(termi);
 		if (!ft_keyspot(termi))
 			return (0);
 	}
@@ -34,12 +34,14 @@ int		main(int argc, char **argv)
 	t_term	termi;
 
 	(void)argc;
+	signal(SIGINT, SIG_IGN);
 	termi.dblist = NULL;
-	if (!ft_init_term(&termi))
+	ft_signal();
+	if (!ft_init_termios(&termi))
 		return (-1);
 	if (argc >= 2)
 		ft_select(argv, &termi);
-	if (!ft_reset_term(&termi))
+	if (!ft_end_termios(&termi))
 		return (-1);
 	return (0);
 }
