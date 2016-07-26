@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/05/02 14:29:20 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/07/26 15:50:25 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <termios.h>
 # include <termcap.h>
 # include <sys/ioctl.h>
-# include <curses.h>
 # define BUFFER *(unsigned int *)buffer
 # define RED "[31m"
 # define BLUE "[34m"
@@ -71,6 +70,7 @@ typedef struct		s_term
 	t_dblist		*dblist;
 }					t_term;
 
+void				manage_signal(int signum, t_term *termi);
 void				ft_print(t_term *termi);
 int					list_size(t_term *termi);
 int					ft_op_display(t_term *termi, int i, int max);
@@ -79,7 +79,6 @@ int					max_col(t_term *termi, int max);
 void				get_screen_size(t_term *termi);
 int					max_size(t_term *termi);
 void				ft_signal(void);
-void				manage_signal(int i);
 void				ft_clear(void);
 void				deselectall(t_term *termi);
 void				selectall(t_term *termi);
