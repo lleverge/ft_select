@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:33:28 by lleverge          #+#    #+#             */
-/*   Updated: 2016/07/26 17:58:55 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/09/13 13:42:17 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ void	ft_print_enter(t_term *termi)
 
 int		ft_init_termios(t_term *termi)
 {
-	struct winsize win;
+	struct	winsize win;
+	char	*tty;
 
+	tty = ttyname(0);
 	termi->enter = 0;
 	if (!isatty(0))
 		return (0);
-	if ((termi->fd = open(ttyname(0), O_RDWR)) == -1)
+	if ((termi->fd = open(tty, O_RDWR)) == -1)
 		return (0);
 	if (tgetent(NULL, getenv("TERM")) < 1)
 		return (0);
@@ -49,6 +51,7 @@ int		ft_init_termios(t_term *termi)
 	if (tcsetattr(termi->fd, TCSANOW, &(termi->term)) == -1)
 		return (0);
 	tputs(tgetstr("vi", NULL), 1, myputchar);
+	ft_strdel(&tty);
 	return (1);
 }
 

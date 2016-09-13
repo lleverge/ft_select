@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:26:59 by lleverge          #+#    #+#             */
-/*   Updated: 2016/07/26 18:04:01 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/09/13 12:31:18 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		main(int argc, char **argv)
 		ft_select(argv, &termi);
 	if (!ft_end_termios(&termi))
 		return (-1);
+//	free_sterm(&termi);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 16:54:37 by lleverge          #+#    #+#             */
-/*   Updated: 2016/05/02 15:35:13 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/09/13 11:40:32 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int				ft_op_display(t_term *termi, int i, int max)
 
 	j = 0;
 	nb_col = termi->nb_col / (max_size(termi) + 2);
-	nb_files_in_col = (list_size(termi) + 1) / (nb_col - 1);
+	nb_files_in_col = (list_size(termi) + 1) / nb_col;
 	if (i % (nb_files_in_col + 1) == 0)
 	{
 		tputs(tgetstr("rc", NULL), 1, myputchar);
