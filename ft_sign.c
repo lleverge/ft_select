@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 16:28:12 by lleverge          #+#    #+#             */
-/*   Updated: 2016/07/26 17:32:51 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/09/13 14:19:52 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ static void		ft_end_term(int sig)
 		ft_putstr_fd("close", 2);
 	exit(0);
 }
-
 
 void			ft_signal(void)
 {

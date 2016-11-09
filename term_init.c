@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:33:28 by lleverge          #+#    #+#             */
-/*   Updated: 2016/09/13 13:42:17 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/09/13 14:20:22 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_print_enter(t_term *termi)
 
 int		ft_init_termios(t_term *termi)
 {
-	struct	winsize win;
-	char	*tty;
+	struct winsize	win;
+	char			*tty;
 
 	tty = ttyname(0);
 	termi->enter = 0;

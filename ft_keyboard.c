@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:53:02 by lleverge          #+#    #+#             */
-/*   Updated: 2016/05/02 14:31:31 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/09 18:05:40 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ static void		manage_key(t_term *termi, char *buffer[5])
 		go_end(termi);
 	if (BUFFER == TAB_KEY)
 		ft_tab(termi);
+	if (BUFFER == LEFT_KEY)
+		move_left(termi);
+	if (BUFFER == RIGHT_KEY)
+		move_right(termi);
 }
 
 int				ft_keyspot(t_term *termi)

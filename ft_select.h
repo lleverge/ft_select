@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/09/13 12:29:18 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/09 17:38:40 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ typedef struct		s_term
 	t_dblist		*dblist;
 }					t_term;
 
+void				move_left(t_term *termi);
+void				move_right(t_term *termi);
 void				free_sterm(t_term *termi);
 void				screen_clear(void);
 void				manage_signal(void);
@@ -90,10 +92,10 @@ void				ft_ret(t_term *termi);
 void				stock_res(t_term *termi);
 void				print_res(t_term *termi);
 void				print_list(t_term *termi);
-void				ft_manage_select(t_dblist *dblist);
-void				select_underline(char *str);
-void				print_select(char *str);
-void				ft_underline(char *str);
+void				ft_manage_select(t_term *termi, t_dblist *dblist);
+void				select_underline(char *str, int fd);
+void				print_select(char *str, int fd);
+void				ft_underline(char *str, int fd);
 int					ft_keyspot(t_term *termi);
 void				ft_tab(t_term *termi);
 int					ft_delete(t_term *termi);

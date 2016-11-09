@@ -6,14 +6,14 @@
 #    By: lleverge <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/21 17:32:58 by lleverge          #+#    #+#              #
-#    Updated: 2016/09/13 13:43:25 by lleverge         ###   ########.fr        #
+#    Updated: 2016/09/13 14:36:27 by lleverge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_select
 SRC = main.c	tools.c		term_init.c		ft_dblist.c\
 	ft_display.c	ft_keyboard.c	ft_key2.c	ft_ret.c\
-	tools2.c	ft_sign.c	ft_size.c
+	tools2.c	ft_sign.c	ft_size.c	ft_key3.c
 OBJ = $(SRC:.c=.o)
 LIB = -L./libft -lft -ltermcap
 FLAGS = -Wall -Wextra -Werror

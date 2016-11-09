@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:26:59 by lleverge          #+#    #+#             */
-/*   Updated: 2016/09/13 12:31:18 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/09 18:07:14 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_select(char **argv, t_term *termi)
 		if (!ft_keyspot(termi))
 			return (0);
 	}
+	close(termi->fd);
 	return (0);
 }
 
@@ -43,6 +44,5 @@ int		main(int argc, char **argv)
 		ft_select(argv, &termi);
 	if (!ft_end_termios(&termi))
 		return (-1);
-//	free_sterm(&termi);
 	return (0);
 }
