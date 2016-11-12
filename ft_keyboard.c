@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 14:53:02 by lleverge          #+#    #+#             */
-/*   Updated: 2016/11/09 21:57:40 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/12 10:22:56 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,28 @@ static void		move_up(t_term *termi)
 {
 	t_dblist	*tmp;
 
-	tmp = termi->dblist;
-	while (tmp->line != 1)
-		tmp = tmp->next;
-	tmp->line = 0;
-	tmp->prev->line = 1;
+	if (termi->nb_col > max_size(termi) + 2)
+	{
+		tmp = termi->dblist;
+		while (tmp->line != 1)
+			tmp = tmp->next;
+		tmp->line = 0;
+		tmp->prev->line = 1;
+	}
 }
 
 static void		move_down(t_term *termi)
 {
 	t_dblist	*tmp;
 
-	tmp = termi->dblist;
-	while (tmp->line != 1)
-		tmp = tmp->next;
-	tmp->line = 0;
-	tmp->next->line = 1;
+	if (termi->nb_col > max_size(termi) + 2)
+	{
+		tmp = termi->dblist;
+		while (tmp->line != 1)
+			tmp = tmp->next;
+		tmp->line = 0;
+		tmp->next->line = 1;
+	}
 }
 
 static void		manage_key(t_term *termi, char *buffer[5])
@@ -82,7 +88,9 @@ int				ft_keyspot(t_term *termi)
 		return (0);
 	}
 	ft_clear();
-	if (termi->nb_col > 15)
+	if (termi->nb_col > max_size(termi) + 2)
 		ft_print(termi);
+	else
+		ft_too_small();
 	return (1);
 }

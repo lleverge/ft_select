@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 14:32:46 by lleverge          #+#    #+#             */
-/*   Updated: 2016/11/09 22:01:08 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/12 10:15:05 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void			move_right(t_term *termi)
 	int			nb_files_per_col;
 	t_dblist	*tmp;
 
-	if (termi->nb_col > 15)
+	if (termi->nb_col > max_size(termi) + 2)
 	{
 		tmp = termi->dblist;
 		nb_col = termi->nb_col / (max_size(termi) + 2);
@@ -45,7 +45,7 @@ void			move_left(t_term *termi)
 	int			nb_files_per_col;
 	t_dblist	*tmp;
 
-	if (termi->nb_col > 15)
+	if (termi->nb_col > max_size(termi) + 2)
 	{
 		tmp = termi->dblist;
 		nb_col = termi->nb_col / (max_size(termi) + 2);

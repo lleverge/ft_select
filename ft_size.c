@@ -6,11 +6,17 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/26 17:23:49 by lleverge          #+#    #+#             */
-/*   Updated: 2016/11/09 18:47:56 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/12 10:20:51 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
+
+void	ft_too_small(void)
+{
+	tputs(tgetstr("cl", NULL), 1, myputchar);
+	ft_putendl_fd("Window size too small.", 2);
+}
 
 int		ft_check_size(t_term *termi)
 {

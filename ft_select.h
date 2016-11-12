@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 14:18:47 by lleverge          #+#    #+#             */
-/*   Updated: 2016/11/09 17:38:40 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/12 10:21:24 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct		s_term
 	t_dblist		*dblist;
 }					t_term;
 
+void				ft_too_small(void);
 void				move_left(t_term *termi);
 void				move_right(t_term *termi);
 void				free_sterm(t_term *termi);
