@@ -6,7 +6,7 @@
 /*   By: lleverge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 16:28:12 by lleverge          #+#    #+#             */
-/*   Updated: 2016/09/13 14:19:52 by lleverge         ###   ########.fr       */
+/*   Updated: 2016/11/15 10:47:30 by lleverge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,22 @@ static void		ft_end_term(int sig)
 
 void			ft_signal(void)
 {
+	signal(SIGPIPE, ft_end_term);
+	signal(SIGSYS, ft_end_term);
+	signal(SIGEMT, ft_end_term);
+	signal(SIGTRAP, ft_end_term);
+	signal(SIGILL, ft_end_term);
+	signal(SIGALRM, ft_end_term);
+	signal(SIGTERM, ft_end_term);
+	signal(SIGBUS, ft_end_term);
+	signal(SIGFPE, ft_end_term);
+	signal(SIGHUP, ft_stop_term);
 	signal(SIGWINCH, ft_resize2);
 	signal(SIGTSTP, ft_stop_term);
 	signal(SIGCONT, ft_restart_term);
 	signal(SIGQUIT, ft_end_term);
 	signal(SIGTERM, ft_end_term);
 	signal(SIGINT, ft_end_term);
+	signal(SIGSEGV, ft_end_term);
+	signal(SIGABRT, ft_end_term);
 }
