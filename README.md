@@ -2,7 +2,9 @@
 
 **Programme utilisant les termcaps qui permet de selectionner un ensemble de choix parmi une liste.**
 
-- Les flèches permettent de se deplacer parmis les choix.-Espace permet de selectionner un choix.
+- Les flèches permettent de se deplacer parmis les choix.
+
+- Espace permet de selectionner un choix.
 
 - Enter pour retourner la selection au shell.
 
